@@ -1,5 +1,5 @@
 # outreachy-wmf
-Scripts specificaly for Outreachy Round 22 project in Wikimedia Foundation (WMF) - Synchronising Wikidata and Wikipedias using pywikibot
+Scripts specifically for Outreachy Round 22 project in Wikimedia Foundation (WMF) - Synchronising Wikidata and Wikipedias using pywikibot
 
 (N.B. Clone [nizz009/pywikibot](https://github.com/nizz009/pywikibot) repository for test runs)
 
