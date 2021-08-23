@@ -3,7 +3,7 @@ Scripts specifically for Outreachy Round 22 project in Wikimedia Foundation (WMF
 
 (N.B. Clone [nizz009/pywikibot](https://github.com/nizz009/pywikibot) repository for test runs)
 
-## File Info:
+## File Info (& Notes):
 
 ### Basic Operations
 
