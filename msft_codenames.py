@@ -1,5 +1,5 @@
-# File name: historicplaces_browncounty_wisconsin.py
-# https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Brown_County,_Wisconsin
+# File name: msft_codenames.py
+# https://en.wikipedia.org/wiki/List_of_Microsoft_codenames
 
 import re
 import pywikibot
