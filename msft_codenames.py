@@ -66,11 +66,11 @@ def searchWdPage(article_name=''):
 def createWdPage(article_name=''):
 	""" Creates a new Wikidata Page """
 
-	# new_item = pywikibot.ItemPage(repo)
-	# new_item.editLabels(labels={"en":article_name}, summary="Creating item")
-	# return new_item.getID()
+	new_item = pywikibot.ItemPage(repo)
+	new_item.editLabels(labels={"en":article_name}, summary="Creating item")
+	return new_item.getID()
 
-	return 0
+	# return 0
 
 
 """ 
@@ -126,7 +126,7 @@ def addToWd(wp_page='', wd_page='', prop_id='', prop_value='', prop_list='', imp
 							print('Same property-value exist in the page as qualifier. Skipping...')
 							return 1
 
-	wd_page = base.WdPage(wd_value='Q4115189')
+	# wd_page = base.WdPage(wd_value='Q4115189')
 
 	""" import details into Wikidata """
 	if prop_id in string:
@@ -145,9 +145,9 @@ def main():
 	# wp_list.printWpContents()
 	list_items = re.split(r'==[\w\s]*==', contents)
 	for list_item in list_items:
-		version = re.split(r'\|-', list_item)
-		for v in version:
-			indiv_items = re.split(r'\|', v)
+		product = re.split(r'\|-', list_item)
+		for version in product:
+			indiv_items = re.split(r'\|', version)
 			article_name = ''
 			try:
 				if indiv_items[1] and indiv_items[3]:
@@ -184,7 +184,7 @@ def main():
 				if wd_page:
 					try:
 						# addition of source url
-						import_url = 'https://en.wikipedia.org/w/index.php?title=%s&oldid=%s' % (wp_page.title.replace(' ', '_'), wp_list.latest_revision_id)
+						import_url = 'https://en.wikipedia.org/w/index.php?title=%s&oldid=%s' % (wp_list.title.replace(' ', '_'), wp_list.latest_revision_id)
 						addToWd(wp_page=wp_page, wd_page=wd_page, prop_id=prop_ids['codename'], prop_value=indiv_items[1].strip('[[').strip(']]\n'), import_url=import_url)
 					except:
 						print('Error adding property.')

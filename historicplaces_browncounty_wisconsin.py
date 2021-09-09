@@ -73,11 +73,11 @@ def searchWdPage(article_name=''):
 def createWdPage(article_name=''):
 	""" Creates a new Wikidata Page """
 
-	# new_item = pywikibot.ItemPage(repo)
-	# new_item.editLabels(labels={"en":article_name}, summary="Creating item")
-	# return new_item.getID()
+	new_item = pywikibot.ItemPage(repo)
+	new_item.editLabels(labels={"en":article_name}, summary="Creating item")
+	return new_item.getID()
 
-	return 0
+	# return 0
 
 
 """ 
@@ -161,7 +161,7 @@ def addToWd(wp_page='', wd_page='', prop_id='', prop_value='', prop_list='', imp
 							print('Same property-value exist in the page as qualifier. Skipping...')
 							return 1
 
-	wd_page = base.WdPage(wd_value='Q4115189')
+	# wd_page = base.WdPage(wd_value='Q4115189')
 
 	""" import details into Wikidata """
 	if prop_id in commons_media:
