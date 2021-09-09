@@ -1,5 +1,5 @@
-# File name: historicplaces_browncounty_wisconsin.py
-# https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Brown_County,_Wisconsin
+# File name: historicplaces_passaiccounty_newjersey.py
+# https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Passaic_County,_New_Jersey
 
 import re
 import pywikibot
@@ -200,14 +200,14 @@ def addToWd(wp_page='', wd_page='', prop_id='', prop_value='', prop_list='', imp
 	return 0
 
 def main():
-	page_name = 'National Register of Historic Places listings in Brown County, Wisconsin'
+	page_name = 'National Register of Historic Places listings in Passaic County, New Jersey'
 
 	wp_list = base.WpPage(page_name)
 	# wp_list.printWpContents()
 
 	""" Retrieving names of the Wp articles """
 	contents = wp_list.getWpContents()
-	list_items = re.split(r'==[\w\s]*==', contents)[1]
+	list_items = re.split(r'==[\w\s]*==', contents)[0]
 	indiv_items = re.split(r'{{NRHP row', list_items)
 
 	for item in indiv_items:
